@@ -1,0 +1,14 @@
+---
+ansible-navigator:
+  execution-environment:
+    container-engine: podman
+    image: registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel8
+    pull:
+      policy: missing
+    enabled: true
+  logging:
+    level: debug
+  mode: stdout
+  editor:
+    command: code-server {filename}
+    console: false
