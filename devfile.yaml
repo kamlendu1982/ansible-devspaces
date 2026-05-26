@@ -33,3 +33,11 @@ components:
           value: "/projects/ansible-devspaces/.code-workspace"
         - name: "ADT_CONTAINER_ENGINE"
           value: "podman"
+commands:
+  - id: run-temp-script
+    exec:
+      component: runtime
+      # Executes a script directly inside your new separate folder
+      workingDir: /projects/my-defrepo3
+      group:
+        kind: run
