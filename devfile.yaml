@@ -21,9 +21,6 @@ dependentProjects:
 components:
   - name: dev-tools
     container:
-      args:
-        - -c
-        - mkdir -p /projects/devrepo3
       image: ghcr.io/ansible/ansible-devspaces:latest
       cpuLimit: 4000m
       cpuRequest: 250m
