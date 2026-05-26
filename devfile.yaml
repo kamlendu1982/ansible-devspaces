@@ -38,6 +38,7 @@ commands:
     exec:
       component: runtime
       # Executes a script directly inside your new separate folder
+      commandLine: "/bin/bash"
       workingDir: /projects/my-defrepo3
       group:
         kind: run
