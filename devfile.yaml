@@ -19,7 +19,7 @@ dependentProjects:
     remotes:
       origin: git@github.com:kamlendu1982/dependent-prj-smbc-devspaces.git
 components:
-  - name: pre-workspace
+  - name: prep-workspace
     container:
       args:
         - -c
@@ -53,7 +53,7 @@ components:
           value: "podman"
 commands:
   - apply:
-      component: pre-workspace
+      component: prep-workspace
       label: Pre Start Prep
     id: prep-workspace
 events:
