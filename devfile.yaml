@@ -19,6 +19,21 @@ dependentProjects:
     remotes:
       origin: git@github.com:kamlendu1982/dependent-prj-smbc-devspaces.git
 components:
+  - name: pre-workspace
+    container:
+      args:
+        - -c
+        - mkdir -p /projects/devrepo3
+      command:
+        - /bin/bash
+      mountSources: true
+      image: ghcr.io/ansible/ansible-devspaces:latest
+      sourceMapping: /projects
+      memoryRequest: 128Mi
+      memoryLimit: 256Mi
+      cpuRequest: 10m
+      cpuLimit: 200m
+      
   - name: dev-tools
     container:
       args:
@@ -36,3 +51,12 @@ components:
           value: "/projects/ansible-devspaces/.code-workspace"
         - name: "ADT_CONTAINER_ENGINE"
           value: "podman"
+commands:
+  - apply:
+      component: pre-workspace
+      label: Pre Start Prep
+    id: prep-workspace
+events:
+  preStart:
+    - prep-workspace
+      
